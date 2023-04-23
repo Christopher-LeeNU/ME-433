@@ -1,0 +1,23 @@
+Warning: Width correction constrained.  The width correction value must be in the range of [0.000001 mm; 0.199999 mm] for the current design rules.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-F_Cu.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-B_Cu.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-F_Paste.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-B_Paste.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-F_Mask.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-B_Mask.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-job.gbrjob'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-F_Cu.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-B_Cu.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-F_Paste.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-B_Paste.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-F_Mask.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-B_Mask.gbr'.
+Plotted to 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\chris\Downloads\01_Quickstart_nu32dip\01_Quickstart_nu32dip\ME-433\kicad\hw4\hw4-job.gbrjob'.
+Info: Done.
+Info: Done.
