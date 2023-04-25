@@ -10,18 +10,18 @@ void initSPI() {
     // Make an output pin for CS
     
     TRISBbits.TRISB13 = 0;
-    
+    LATBbits.LATB13 = 1;
     
     //...
     //...
     // Set SDO1
-    
+    TRISBbits.TRISB11 = 0;
     RPB11Rbits.RPB11R = 0b0011; 
     
     //...
     // Set SDI1
-    
-    
+    TRISBbits.TRISB8 = 0;
+    SDI1Rbits.SDI1R = 0b0100;
     
     //...
 

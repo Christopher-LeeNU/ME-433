@@ -1,6 +1,5 @@
 #ifndef SPI__H__
 #define SPI__H__
-
 #define CS LATBbits.LATB13
 
 void initSPI();
