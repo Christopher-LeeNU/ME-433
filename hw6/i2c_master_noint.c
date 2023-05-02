@@ -8,6 +8,7 @@ void i2c_master_setup(void) {
     // look up TPGD in the datasheet
     I2C1BRG = 1000; // I2CBRG = [1/(2*Fsck) - TPGD]*Pblck - 2 (TPGD is the Pulse Gobbler Delay)
     I2C1CONbits.ON = 1; // turn on the I2C1 module
+    
 }
 
 void i2c_master_start(void) {

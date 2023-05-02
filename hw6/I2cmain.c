@@ -1,25 +1,109 @@
 #include "nu32dip.h" // constants, functions for startup and UART
+#include "i2c_master_noint.h"
 
 void blink(int, int); // blink the LEDs function
+void IOset(void);
+void OLATlight(void);
+void OLATdark(void);
+unsigned char readGP0(void);
+void delay(void);
 
 int main(void) {
   char message[100];
   
-  int m = 0;
-  int n = 0;
-  
   NU32DIP_Startup(); // cache on, interrupts on, LED/button init, UART init
-  while (1) {
-    NU32DIP_ReadUART1(message, 100); // wait here until get message from computer
-    sscanf(message, "%d %d\r\n", &m, &n);
-    sprintf(message, "%d %d", m, n);
-    NU32DIP_WriteUART1(message); // send message back
-    NU32DIP_WriteUART1("\r\n"); // carriage return and newline
-	if (NU32DIP_USER){
-		blink(m, n); // 5 times, 500ms each time
-	}
+  IOset();
+  OLATdark();
+  while(1) {
+      OLATdark();
+      blink(1, 1000);      
+      unsigned char recv = readGP0();
+      int i = !(recv && 0b1);
+      // sprintf(message, "%d\r\n", i);
+      // NU32DIP_WriteUART1(message);
+      if (i) {
+          OLATlight();
+          delay();
+      }
   }
 }
+
+
+void IOset(void) {
+  i2c_master_setup();
+  // start
+  i2c_master_start(); 
+  // address
+  unsigned char address = 0b0100000 << 1;
+  i2c_master_send(address);
+  // data frame 1
+  unsigned char iodir= 0x00;
+  i2c_master_send(iodir);
+  // data frame 2
+  unsigned char iobits = 0b01111111;
+  i2c_master_send(iobits);
+  // stop
+  i2c_master_stop();
+}
+
+
+void OLATlight(void) {
+  i2c_master_setup();
+  // start
+  i2c_master_start(); 
+  // address
+  unsigned char address = 0b0100000 << 1;
+  i2c_master_send(address);
+  // data frame 1
+  unsigned char olat= 0x0A;
+  i2c_master_send(olat);
+  // data frame 2
+  unsigned char olatbits = 0b10000000;
+  i2c_master_send(olatbits);
+  // stop
+  i2c_master_stop();
+}
+
+void OLATdark(void) {
+  i2c_master_setup();
+  // start
+  i2c_master_start(); 
+  // address
+  unsigned char address = 0b0100000 << 1;
+  i2c_master_send(address);
+  // data frame 1
+  unsigned char olat= 0x0A;
+  i2c_master_send(olat);
+  // data frame 2
+  unsigned char olatbits = 0b00000000;
+  i2c_master_send(olatbits);
+  // stop
+  i2c_master_stop();
+}
+
+unsigned char readGP0(void) {
+  // start
+  i2c_master_start();
+  // send addy with write bit
+  unsigned char address = 0b0100000 << 1;
+  i2c_master_send(address);
+  // send register
+  unsigned char gpio = 0x09;
+  i2c_master_send(gpio);
+  // restart
+  i2c_master_restart(); 
+  // send addy with read bit 
+  unsigned char addy2 = 0b01000001 ;
+  i2c_master_send(addy2);
+  // recv
+  unsigned char recv = i2c_master_recv();
+  // ack w/ 1
+  i2c_master_ack(1);
+  // stop
+  i2c_master_stop();
+  return recv;
+}
+
 
 // blink the LEDs
 void blink(int iterations, int time_ms){
@@ -39,5 +123,11 @@ void blink(int iterations, int time_ms){
 		t = _CP0_GET_COUNT(); // should really check for overflow here
 		while(_CP0_GET_COUNT() < t + 12000*time_ms){}
 	}
+}
+
+void delay(void) {
+    int t = 0;
+    while(t < 24000000)
+        t++;
 }
 		
