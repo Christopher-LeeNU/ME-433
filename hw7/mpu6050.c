@@ -18,7 +18,7 @@ void delay(void) {
 // Initialize MPU6050 IMU:
 void init_mpu6050(void) {
     i2c_master_setup(); // initialize I2C1 (used for comm w/ IMU)
-    NU32DIP_WriteUART1("Initialized I2C1.\r\n");
+    // NU32DIP_WriteUART1("Initialized I2C1.\r\n");
     
     // 1. Configure IMU to get clock signal from internal 8 MHz oscillator:
     //  write to MPU-6050 PWR_MGMT_1 register,
