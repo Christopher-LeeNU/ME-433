@@ -10,8 +10,6 @@ def MAF(X, data):
         filtered[i] = sum(points)/len(points)
     return filtered
 
-print(MAF(4, [1, 1, 3, 3, 5, 5]))
-
 
 t = [] # column 0
 data1 = [] # column 1
