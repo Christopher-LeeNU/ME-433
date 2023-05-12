@@ -14,7 +14,6 @@ int main(void) {
 	// char array for the raw data
     uint8_t raw[IMU_ARRAY_LEN];
 	// floats to store the data
-	float store[IMU_ARRAY_LEN];
     
 	// read whoami
     uint8_t whomst = whoami();
