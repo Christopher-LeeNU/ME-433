@@ -1,0 +1,2 @@
+CIRCUITPY_WIFI_SSID = "Device-Northwestern"
+CIRCUITPY_WIFI_PASSWORD = ""
